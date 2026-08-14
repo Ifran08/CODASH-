@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CODASH — Full-Stack Web Design & Development Studio</title>
+<meta name="description" content="CODASH builds full-stack websites for startups and small businesses — design, frontend, and backend, all in one place.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="logo">CODASH<span class="cursor"></span></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn--ghost btn--sm">Book a Call</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="blob-field" aria-hidden="true">
+      <svg class="blob blob--gold" style="width:340px;height:340px;top:-120px;right:-90px;" viewBox="0 0 200 200"></svg>
+      <svg class="blob blob--maroon-outline" style="width:220px;height:220px;bottom:-80px;left:-60px;" viewBox="0 0 200 200"></svg>
+      <svg class="blob blob--cream-outline" style="width:140px;height:140px;top:220px;right:120px;" viewBox="0 0 200 200"></svg>
+    </div>
+    <div class="wrap">
+      <div class="hero-content">
+        <span class="eyebrow">full-stack studio</span>
+        <h1>We build the <em>whole stack</em>,<br>beautifully.<span class="cursor"></span></h1>
+        <p class="hero-sub">CODASH is a small studio that designs, builds, and ships complete websites — frontend, backend, and everything holding it together — for startups and small businesses who don't want to hire three vendors to get one thing done.</p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn--primary">Book a Call</a>
+          <a href="portfolio.html" class="btn btn--ghost">See our work</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><b>3–6 wks</b><span>signing to launch</span></div>
+          <div class="hero-stat"><b>1 team</b><span>design + dev + backend</span></div>
+          <div class="hero-stat"><b>∞</b><span>free revisions</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="section reveal">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">why codash</span>
+        <h2>One team. Every layer of the build.</h2>
+        <p>Most agencies hand you a pretty homepage and call it done. We stay through the parts that actually make a website work.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar pillar--lead">
+          <span class="pillar-mark">01 · the lead reason</span>
+          <h3>Genuinely full-stack</h3>
+          <p>Design, frontend, backend, and infrastructure come from the same team, in the same sprint — nothing gets lost in a handoff between vendors.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-mark">02</span>
+          <h3>Fast turnaround</h3>
+          <p>Most sites go from kickoff to live in 3–6 weeks, not months.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-mark">03</span>
+          <h3>Considered design</h3>
+          <p>Every project gets a look that's built for your brand, not pulled from a template library.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-mark">04</span>
+          <h3>Fair, mid-range pricing</h3>
+          <p>Solid engineering without agency markup — priced for startups and local businesses, not enterprises.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO PREVIEW -->
+  <section class="section reveal" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">selected work</span>
+        <h2>A few things we've shipped.</h2>
+      </div>
+      <div class="proj-grid">
+        <div class="proj-card">
+          <div class="proj-thumb" style="background:var(--gold);">🥐</div>
+          <div class="proj-body">
+            <h3>Local bakery, online ordering</h3>
+            <p style="color:var(--ink-soft); font-size:0.92rem;">A storefront site with live menu management and order pickup scheduling.</p>
+            <div class="proj-tags"><span class="tag">Next.js</span><span class="tag">Stripe</span><span class="tag">CMS</span></div>
+          </div>
+        </div>
+        <div class="proj-card">
+          <div class="proj-thumb" style="background:var(--cream-dim);">🚀</div>
+          <div class="proj-body">
+            <h3>SaaS startup landing page</h3>
+            <p style="color:var(--ink-soft); font-size:0.92rem;">A conversion-focused marketing site with a waitlist and product walkthrough.</p>
+            <div class="proj-tags"><span class="tag">React</span><span class="tag">Node</span><span class="tag">Analytics</span></div>
+          </div>
+        </div>
+        <div class="proj-card">
+          <div class="proj-thumb" style="background:var(--maroon); color:var(--cream);">🍽️</div>
+          <div class="proj-body">
+            <h3>Restaurant booking platform</h3>
+            <p style="color:var(--ink-soft); font-size:0.92rem;">Table reservations, waitlists, and a dashboard the owner actually uses.</p>
+            <div class="proj-tags"><span class="tag">Next.js</span><span class="tag">Postgres</span><span class="tag">Dashboard</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:36px;">
+        <a href="portfolio.html" class="btn btn--ghost btn--sm">View all work →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES PREVIEW -->
+  <section class="section reveal">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">what we do</span>
+        <h2>Web design & development, done properly.</h2>
+      </div>
+      <div class="svc-list">
+        <div class="svc-row">
+          <div class="svc-row-left">
+            <span class="svc-num">01</span>
+            <div><h3>Web design</h3><p>Brand-true visual design, built for how people actually use your site.</p></div>
+          </div>
+        </div>
+        <div class="svc-row">
+          <div class="svc-row-left">
+            <span class="svc-num">02</span>
+            <div><h3>Frontend development</h3><p>Fast, responsive builds in React and Next.js.</p></div>
+          </div>
+        </div>
+        <div class="svc-row">
+          <div class="svc-row-left">
+            <span class="svc-num">03</span>
+            <div><h3>Backend & full-stack delivery</h3><p>Databases, auth, integrations — the parts that make a site actually work.</p></div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:36px;">
+        <a href="services.html" class="btn btn--ghost btn--sm">See full services →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="section section--band cta-band reveal">
+    <div class="wrap">
+      <h2>Got an idea? Let's build it.<span class="cursor cursor--gold"></span></h2>
+      <p>Tell us what you're building — we'll tell you exactly how we'd approach it.</p>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn btn--primary" style="background:var(--gold); color:var(--ink); box-shadow:6px 6px 0 var(--cream);">Book a Call</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo">CODASH<span class="cursor cursor--gold"></span></a>
+        <p class="footer-desc">A full-stack studio for startups and small businesses. Design, frontend, and backend — one team, one build.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Site</h4>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <a href="contact.html">Book a call</a>
+        <p>hello@codash.studio</p>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CODASH. All rights reserved.</span>
+      <span>Designed & built by CODASH</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
