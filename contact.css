@@ -1,0 +1,68 @@
+/* ==========================================================================
+   contact.css — layout + mobile responsiveness for contact.html
+   Loaded after style.css (page-specific, doesn't affect other pages)
+   ========================================================================== */
+
+/* ---- desktop layout ---- */
+.contact-layout{
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.form-grid-2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 20px;
+}
+
+/* ---- tablet ---- */
+@media (max-width: 860px){
+  .contact-layout{
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+/* ---- mobile ---- */
+@media (max-width: 600px){
+  .form-grid-2{
+    grid-template-columns: 1fr;
+  }
+
+  .form-card{
+    padding: 26px 20px;
+  }
+
+  .form-card h2{
+    font-size: 1.3rem;
+  }
+
+  .page-hero{
+    padding: 48px 0 40px;
+  }
+
+  .contact-info-item{
+    gap: 12px;
+  }
+}
+
+/* ---- small phones ---- */
+@media (max-width: 380px){
+  .form-card{
+    padding: 20px 16px;
+  }
+
+  .form-row input,
+  .form-row select,
+  .form-row textarea{
+    padding: 11px 14px;
+    font-size: 0.95rem;
+  }
+
+  .btn{
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+}
