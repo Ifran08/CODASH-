@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — CODASH</title>
+<meta name="description" content="Book a call with CODASH — tell us what you're building and we'll tell you how we'd approach it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="logo">CODASH<span class="cursor"></span></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html" aria-current="page">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn--ghost btn--sm">Book a Call</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="blob-field" aria-hidden="true">
+      <svg class="blob blob--gold" style="width:200px;height:200px;top:-70px;right:-40px;" viewBox="0 0 200 200"></svg>
+      <svg class="blob blob--cream-outline" style="width:120px;height:120px;top:200px;right:160px;" viewBox="0 0 200 200"></svg>
+    </div>
+    <div class="wrap" style="position:relative; z-index:2;">
+      <span class="eyebrow">get in touch</span>
+      <h1>Let's talk about what you're building.<span class="cursor"></span></h1>
+      <p>Fill out the form and we'll get back to you within a day — or book a call directly if you'd rather just talk it through.</p>
+    </div>
+  </section>
+
+  <!-- FORM + INFO -->
+  <section class="section reveal">
+    <div class="wrap">
+      <div style="display:grid; grid-template-columns: 1.4fr 1fr; gap:48px; align-items:start;">
+
+        <!-- FORM -->
+        <div class="form-card">
+          <h2 style="font-size:1.5rem; margin-bottom:6px;">Tell us about your project</h2>
+          <p style="color:var(--ink-soft); font-size:0.95rem; margin-bottom:28px;">The more detail, the faster we can scope it.</p>
+
+          <form id="booking-form" novalidate>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:0 20px;">
+              <div class="form-row">
+                <label for="name">Full name</label>
+                <input type="text" id="name" name="name" placeholder="Jane Doe" required>
+              </div>
+              <div class="form-row">
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" placeholder="jane@company.com" required>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:0 20px;">
+              <div class="form-row">
+                <label for="company">Business / project name</label>
+                <input type="text" id="company" name="company" placeholder="Optional">
+              </div>
+              <div class="form-row">
+                <label for="project-type">What do you need?</label>
+                <select id="project-type" name="project-type" required>
+                  <option value="" disabled selected>Select one</option>
+                  <option value="new-site">A new website</option>
+                  <option value="redesign">Redesign of an existing site</option>
+                  <option value="webapp">Web app / backend build</option>
+                  <option value="not-sure">Not sure yet</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <label for="budget">Rough budget</label>
+              <select id="budget" name="budget">
+                <option value="" disabled selected>Select a range</option>
+                <option value="under-3k">Under $3,000</option>
+                <option value="3-8k">$3,000 – $8,000</option>
+                <option value="8-15k">$8,000 – $15,000</option>
+                <option value="15k-plus">$15,000+</option>
+                <option value="not-sure">Not sure yet</option>
+              </select>
+            </div>
+
+            <div class="form-row" style="margin-bottom:8px;">
+              <label for="message">Tell us more</label>
+              <textarea id="message" name="message" placeholder="What are you building, and what's the timeline?" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary" style="margin-top:14px; width:100%; justify-content:center;">Send message</button>
+
+            <div class="form-success" id="form-success">
+              ✓ Thanks — your message is in. We'll reply within one business day.
+            </div>
+            <p class="form-note">This form isn't wired to email yet — hook it up to your backend or a form service (e.g. Formspree) before going live.</p>
+          </form>
+        </div>
+
+        <!-- CONTACT INFO -->
+        <div>
+          <div class="contact-info">
+            <div class="contact-info-item">
+              <span class="contact-info-icon">@</span>
+              <div>
+                <h4>Email</h4>
+                <a href="mailto:hello@codash.studio">hello@codash.studio</a>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <span class="contact-info-icon">⏱</span>
+              <div>
+                <h4>Response time</h4>
+                <p>Within one business day, usually faster.</p>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <span class="contact-info-icon">📍</span>
+              <div>
+                <h4>Based</h4>
+                <p>Remote-first — we work with clients everywhere.</p>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <span class="contact-info-icon">↗</span>
+              <div>
+                <h4>Follow along</h4>
+                <a href="#">Instagram</a>
+                <a href="#">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:36px; background:var(--gold-soft); border:var(--border); border-radius:var(--radius-md); padding:24px; box-shadow:var(--shadow-pop-sm);">
+            <h4 style="font-family:var(--font-display); font-size:1.05rem; margin-bottom:8px;">Not ready to talk yet?</h4>
+            <p style="color:var(--ink-soft); font-size:0.92rem;">Have a look through our work first — no pressure, no forms.</p>
+            <a href="portfolio.html" class="btn btn--ghost btn--sm" style="margin-top:16px;">See our work →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo">CODASH<span class="cursor cursor--gold"></span></a>
+        <p class="footer-desc">A full-stack studio for startups and small businesses. Design, frontend, and backend — one team, one build.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Site</h4>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <a href="contact.html">Book a call</a>
+        <p>hello@codash.studio</p>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CODASH. All rights reserved.</span>
+      <span>Designed & built by CODASH</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
