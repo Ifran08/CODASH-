@@ -285,6 +285,49 @@ button{ font-family:inherit; cursor:pointer; }
   color: var(--ink-soft);
 }
 
+.hero-grid{
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.hero-visual{
+  position: relative;
+}
+.hero-visual img{
+  display: block;
+  width: 100%;
+  height: auto;
+  border: var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-pop);
+  background: var(--white);
+}
+.hero-visual-tag{
+  position: absolute;
+  bottom: -18px;
+  left: 24px;
+  background: var(--gold);
+  border: var(--border);
+  border-radius: var(--radius-sm);
+  padding: 8px 16px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink);
+  box-shadow: var(--shadow-pop-sm);
+}
+@media (max-width: 900px){
+  .hero-grid{
+    grid-template-columns: 1fr;
+  }
+  .hero-visual{
+    order: -1;
+  }
+  .hero-visual-tag{
+    left: 16px;
+  }
+}
+
 /* ==========================================================================
    Sections (generic)
    ========================================================================== */
