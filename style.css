@@ -445,14 +445,16 @@ button{ font-family:inherit; cursor:pointer; }
 
 /* ---- generic content bits reused across inner pages ---- */
 .process-steps{ display:grid; grid-template-columns: repeat(4,1fr); gap:20px; }
-.process-step{ background:var(--white); border:var(--border); border-radius:var(--radius-md); padding:24px 20px; box-shadow: var(--shadow-pop-sm); }
+.process-step{ background:var(--white); border:var(--border); border-radius:var(--radius-md); padding:24px 20px; box-shadow: var(--shadow-pop-sm); transition: transform .2s var(--ease), box-shadow .2s var(--ease); }
+.process-step:hover{ transform: translateY(-6px); box-shadow: 8px 10px 0 var(--ink); }
 .process-step h3{ font-size:1.1rem; margin-top:10px; }
 .process-step p{ color:var(--ink-soft); font-size:0.9rem; margin-top:8px; }
 @media (max-width:900px){ .process-steps{ grid-template-columns: 1fr 1fr; } }
 @media (max-width:600px){ .process-steps{ grid-template-columns: 1fr; } }
 
 .team-grid{ display:grid; grid-template-columns: repeat(4,1fr); gap:22px; }
-.team-card{ background:var(--white); border:var(--border); border-radius:var(--radius-md); padding:24px; box-shadow:var(--shadow-pop-sm); text-align:center; }
+.team-card{ background:var(--white); border:var(--border); border-radius:var(--radius-md); padding:24px; box-shadow:var(--shadow-pop-sm); text-align:center; transition: transform .2s var(--ease), box-shadow .2s var(--ease); }
+.team-card:hover{ transform: translateY(-6px); box-shadow: 8px 10px 0 var(--ink); }
 .team-avatar{
   width:76px; height:76px; border-radius:50%;
   border: 3px solid var(--ink);
