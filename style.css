@@ -220,20 +220,37 @@ button{ font-family:inherit; cursor:pointer; }
 @media (max-width: 860px){
   .nav-links{
     position:fixed;
-    top: 68px; left:0; right:0;
+    top: 68px; left:0; right:0; bottom:0;
     background: var(--cream);
-    border-bottom: 3px solid var(--ink);
+    display:flex;
     flex-direction:column;
-    align-items:stretch;
-    gap: 0;
-    padding: 8px 20px 16px;
-    max-height: calc(100vh - 68px);
-    overflow-y: auto;
-    transform: translateY(-130%);
-    transition: transform .28s var(--ease);
-    box-shadow: 0 12px 24px rgba(36,16,18,0.12);
+    align-items:center;
+    justify-content:center;
+    gap: 10px;
+    padding: 40px 28px;
+    overflow-y:auto;
+    z-index: 90;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(14px);
+    transition: opacity .3s var(--ease), transform .3s var(--ease), visibility 0s linear .3s;
   }
-  .nav-links.open{ transform: translateY(0); }
+  .nav-links::before{
+    content:"‹ menu ›";
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    color: var(--maroon);
+    margin-bottom: 12px;
+  }
+  .nav-links.open{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity .3s var(--ease), transform .3s var(--ease), visibility 0s linear 0s;
+  }
+
+  .nav-links li{ width:100%; max-width:360px; }
 
   /* kill the desktop hover-underline entirely on mobile — it's what was
      drifting down and slicing through the next row's text */
@@ -242,25 +259,35 @@ button{ font-family:inherit; cursor:pointer; }
   .nav-links a{
     display:flex;
     align-items:center;
+    justify-content:center;
     width:100%;
-    padding: 16px 14px;
+    padding: 18px 20px;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
     line-height: 1.2;
-    border-radius: var(--radius-sm);
-    border-bottom: 1.5px solid rgba(36,16,18,0.1);
-    border-left: 4px solid transparent;
-    transition: background .16s var(--ease), border-color .16s var(--ease);
+    border-radius: var(--radius-md);
+    border: 2.5px solid transparent;
+    transition: background .16s var(--ease), border-color .16s var(--ease), transform .16s var(--ease);
   }
-  .nav-links li:last-child a{ border-bottom: none; }
-  .nav-links a:hover{ background: rgba(255,201,74,0.25); }
+  .nav-links a:hover{ background: rgba(255,201,74,0.3); transform: translateY(-2px); }
   .nav-links a[aria-current="page"]{
     color: var(--maroon);
-    background: rgba(255,201,74,0.35);
-    border-left-color: var(--maroon);
-    font-weight: 600;
+    background: var(--gold);
+    border-color: var(--ink);
+    box-shadow: var(--shadow-pop-sm);
   }
 
+  .nav-cta{ position:relative; z-index:95; }
   .nav-cta .btn--ghost{ display:none; }
-  .nav-toggle{ display:flex; }
+  .nav-toggle{ display:flex; position:relative; z-index:95; }
+
+  /* hamburger morphs into an X while the overlay is open */
+  .nav-toggle[aria-expanded="true"] span{ background: transparent; }
+  .nav-toggle[aria-expanded="true"] span::before{ top:0; transform: rotate(45deg); }
+  .nav-toggle[aria-expanded="true"] span::after{ top:0; transform: rotate(-45deg); }
+
+  body:has(.nav-links.open){ overflow:hidden; }
 }
 
 /* ==========================================================================
