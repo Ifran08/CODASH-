@@ -288,6 +288,13 @@ button{ font-family:inherit; cursor:pointer; }
   .nav-toggle[aria-expanded="true"] span::after{ top:0; transform: rotate(-45deg); }
 
   body:has(.nav-links.open){ overflow:hidden; }
+
+  /* backdrop-filter on .site-header makes it the containing block for any
+     position:fixed descendant (here, .nav-links) — so the "full-screen"
+     overlay was actually positioning against the ~68px header box, not the
+     viewport. Suspend the blur while the menu is open so fixed positioning
+     works as intended. */
+  body:has(.nav-links.open) .site-header{ backdrop-filter: none; }
 }
 
 /* ==========================================================================
