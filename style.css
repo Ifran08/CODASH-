@@ -250,7 +250,7 @@ button{ font-family:inherit; cursor:pointer; }
     border-left: 4px solid transparent;
     transition: background .16s var(--ease), border-color .16s var(--ease);
   }
-  .nav-links a:last-of-type{ border-bottom: none; }
+  .nav-links li:last-child a{ border-bottom: none; }
   .nav-links a:hover{ background: rgba(255,201,74,0.25); }
   .nav-links a[aria-current="page"]{
     color: var(--maroon);
