@@ -238,7 +238,7 @@ button{ font-family:inherit; cursor:pointer; }
   .nav-links::before{
     content:"‹ menu ›";
     font-family: var(--font-mono);
-    font-size: 0.8rem;
+    font-size: 18px;
     letter-spacing: 0.08em;
     color: var(--maroon);
     margin-bottom: 12px;
