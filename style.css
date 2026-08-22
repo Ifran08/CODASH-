@@ -235,14 +235,14 @@ button{ font-family:inherit; cursor:pointer; }
     transform: translateY(14px);
     transition: opacity .3s var(--ease), transform .3s var(--ease), visibility 0s linear .3s;
   }
-  .nav-links::before{
-    content:"‹ menu ›";
-    font-family: var(--font-mono);
-    font-size: 18px;
-    letter-spacing: 0.08em;
-    color: var(--maroon);
-    margin-bottom: 12px;
-  }
+      .nav-links::before {
+        content: "‹ menu ›";
+        font-family: var(--font-mono);
+        font-size: 18px;
+        letter-spacing: 0.08em;
+        color: var(--maroon);
+        margin-bottom: 12px;
+    }
   .nav-links.open{
     opacity: 1;
     visibility: visible;
