@@ -56,7 +56,11 @@
           <h2 style="font-size:1.5rem; margin-bottom:6px;">Tell us about your project</h2>
           <p style="color:var(--ink-soft); font-size:0.95rem; margin-bottom:28px;">The more detail, the faster we can scope it.</p>
 
-          <form id="booking-form" novalidate>
+          <form id="booking-form" novalidate action="https://formspree.io/f/mohammadifran06@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New project inquiry — CODASH website">
+            <input type="hidden" name="_replyto" id="replyto-field">
+            <input type="hidden" name="formatted_message" id="formatted-message-field">
+
             <div class="form-grid-2">
               <div class="form-row">
                 <label for="name">Full name</label>
@@ -107,7 +111,6 @@
             <div class="form-success" id="form-success">
               ✓ Thanks — your message is in. We'll reply within one business day.
             </div>
-            <p class="form-note">This form isn't wired to email yet — hook it up to your backend or a form service (e.g. Formspree) before going live.</p>
           </form>
         </div>
 
@@ -191,5 +194,83 @@
 </footer>
 
 <script src="main.js"></script>
+<script>
+document.getElementById('booking-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const form = e.target;
+  const successMsg = document.getElementById('form-success');
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const originalBtnText = submitBtn.textContent;
+
+  const name = form.name.value.trim();
+  const email = form.email.value.trim();
+  const company = form.company.value.trim() || 'Not provided';
+  const projectTypeLabels = {
+    'new-site': 'A new website',
+    'redesign': 'Redesign of an existing site',
+    'webapp': 'Web app / backend build',
+    'not-sure': 'Not sure yet'
+  };
+  const budgetLabels = {
+    'under-3k': 'Under $3,000',
+    '3-8k': '$3,000 – $8,000',
+    '8-15k': '$8,000 – $15,000',
+    '15k-plus': '$15,000+',
+    'not-sure': 'Not sure yet'
+  };
+  const projectType = projectTypeLabels[form['project-type'].value] || 'Not specified';
+  const budget = budgetLabels[form.budget.value] || 'Not specified';
+  const message = form.message.value.trim();
+
+  const formattedMessage =
+`Dear CODASH team,
+
+You have received a new project inquiry through the website contact form. Details are below:
+
+Client name: ${name}
+Client email: ${email}
+Business / project name: ${company}
+Project type requested: ${projectType}
+Estimated budget: ${budget}
+
+Project details, in the client's own words:
+"${message}"
+
+Please follow up within one business day, as promised on the site.
+
+Best regards,
+CODASH Website`;
+
+  document.getElementById('replyto-field').value = email;
+  document.getElementById('formatted-message-field').value = formattedMessage;
+
+  const data = new FormData(form);
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending...';
+
+  fetch(form.action, {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  })
+    .then((response) => {
+      if (response.ok) {
+        form.reset();
+        successMsg.style.display = 'block';
+        successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } else {
+        alert('Something went wrong — please try again or email us directly at hello@codash.studio.');
+      }
+    })
+    .catch(() => {
+      alert('Something went wrong — please try again or email us directly at hello@codash.studio.');
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalBtnText;
+    });
+});
+</script>
 </body>
 </html>
