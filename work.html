@@ -1,144 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Work — CODASH</title>
-<meta name="description" content="Selected projects from CODASH — full-stack websites for startups and small businesses.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work — CODASH</title>
+  <meta name="description"
+    content="Selected projects from CODASH — full-stack websites for startups and small businesses.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header class="site-header">
-  <nav class="nav">
-    <a href="index.html" class="logo">CODASH<span class="cursor"></span></a>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="portfolio.html" aria-current="page">Work</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div class="nav-cta">
-      <a href="contact.html" class="btn btn--ghost btn--sm">Book a Call</a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
-    </div>
-  </nav>
-</header>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="logo">CODASH<span class="cursor"></span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html" aria-current="page">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn--ghost btn--sm">Book a Call</a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      </div>
+    </nav>
+  </header>
 
-<main>
+  <main>
 
-  <!-- PAGE HERO -->
-  <section class="page-hero">
-    <div class="blob-field" aria-hidden="true">
-      <svg class="blob blob--maroon-outline" style="width:200px;height:200px;top:-60px;right:60px;" viewBox="0 0 200 200"></svg>
-    </div>
-    <div class="wrap" style="position:relative; z-index:2;">
-      <span class="eyebrow">selected work</span>
-      <h1>A few things we've shipped.<span class="cursor"></span></h1>
-      <p>Real projects, real problems solved. Here's a look at what full-stack delivery actually looks like in practice.</p>
-    </div>
-  </section>
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="blob-field" aria-hidden="true">
+        <svg class="blob blob--maroon-outline" style="width:200px;height:200px;top:-60px;right:60px;"
+          viewBox="0 0 200 200"></svg>
+      </div>
+      <div class="wrap" style="position:relative; z-index:2;">
+        <span class="eyebrow">selected work</span>
+        <h1>A few things we've shipped.<span class="cursor"></span></h1>
+        <p>Real projects, real problems solved. Here's a look at what full-stack delivery actually looks like in
+          practice.</p>
+      </div>
+    </section>
 
-  <!-- PROJECT GRID -->
-  <section class="section reveal">
+    <!-- PROJECT GRID -->
+    <section class="section reveal">
+      <div class="wrap">
+        <div class="proj-grid">
+
+          <div class="proj-card">
+            <div class="proj-thumb proj-thumb--img">
+              <img src="local-bakery-hero.png" alt="Local Bakery website preview">
+            </div>
+            <div class="proj-body">
+              <h3>local Bakery</h3>
+              <p style="color:var(--ink-soft); font-size:0.92rem;">A Turkish-inspired café site with a full menu
+                showcase, photo gallery, and a table reservation form — built to feel warm and authentic while staying
+                fast and easy to update.</p>
+              <div class="proj-tags"><span class="tag">Design</span><span class="tag">Menu</span><span
+                  class="tag">Reservations</span></div>
+              <a href="https://palm-s-caf.vercel.app/" target="_blank" rel="noopener" class="btn btn--ghost btn--sm"
+                style="margin-top:14px;">Visit site →</a>
+            </div>
+          </div>
+
+          <div class="proj-card">
+            <div class="proj-thumb" style="background:var(--gold); font-size:2.4rem;">🥐</div>
+            <div class="proj-body">
+              <h3>Local bakery, online ordering</h3>
+              <p style="color:var(--ink-soft); font-size:0.92rem;">A neighborhood bakery needed a way to take orders
+                online without losing the handmade feel of the brand. We built a storefront with live menu management,
+                so the owner can update items and sell out a product without touching code, plus scheduled pickup slots
+                and card payments.</p>
+              <div class="proj-tags"><span class="tag">Next.js</span><span class="tag">Stripe</span><span
+                  class="tag">CMS</span></div>
+            </div>
+          </div>
+
+          <div class="proj-card">
+            <div class="proj-thumb" style="background:var(--cream-dim); font-size:2.4rem;">🚀</div>
+            <div class="proj-body">
+              <h3>SaaS startup landing page</h3>
+              <p style="color:var(--ink-soft); font-size:0.92rem;">An early-stage startup needed a marketing site that
+                could convert visitors into waitlist sign-ups before the product was even live. We designed and built a
+                conversion-focused landing page with an interactive product walkthrough and analytics baked in from day
+                one.</p>
+              <div class="proj-tags"><span class="tag">React</span><span class="tag">Node</span><span
+                  class="tag">Analytics</span></div>
+            </div>
+          </div>
+
+          <div class="proj-card">
+            <div class="proj-thumb" style="background:var(--maroon); color:var(--cream); font-size:2.4rem;">🍽️</div>
+            <div class="proj-body">
+              <h3>Restaurant booking platform</h3>
+              <p style="color:var(--ink-soft); font-size:0.92rem;">A restaurant was managing reservations by phone and
+                losing track of tables during busy hours. We built a booking system with live availability, automatic
+                waitlists, and a simple dashboard the owner actually opens every day instead of ignoring.</p>
+              <div class="proj-tags"><span class="tag">Next.js</span><span class="tag">Postgres</span><span
+                  class="tag">Dashboard</span></div>
+            </div>
+          </div>
+
+        </div>
+
+        <p style="margin-top:44px; color:var(--ink-soft); font-family:var(--font-mono); font-size:0.88rem;">More case
+          studies coming soon as new projects launch.</p>
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="section section--band cta-band reveal">
+      <div class="wrap">
+        <h2>Want your project on this page next?<span class="cursor cursor--gold"></span></h2>
+        <p>Tell us what you're building and we'll show you how we'd approach it.</p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn--primary"
+            style="background:var(--gold); color:var(--ink); box-shadow:6px 6px 0 var(--cream);">Book a Call</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
     <div class="wrap">
-      <div class="proj-grid">
-
-        <div class="proj-card">
-          <div class="proj-thumb proj-thumb--img">
-            <img src="local-bakery-hero.png" alt="Local Bakery website preview">
-          </div>
-          <div class="proj-body">
-            <h3>local Bakery</h3>
-            <p style="color:var(--ink-soft); font-size:0.92rem;">A Turkish-inspired café site with a full menu showcase, photo gallery, and a table reservation form — built to feel warm and authentic while staying fast and easy to update.</p>
-            <div class="proj-tags"><span class="tag">Design</span><span class="tag">Menu</span><span class="tag">Reservations</span></div>
-            <a href="https://palm-s-caf.vercel.app/" target="_blank" rel="noopener" class="btn btn--ghost btn--sm" style="margin-top:14px;">Visit site →</a>
-          </div>
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo">CODASH<span class="cursor cursor--gold"></span></a>
+          <p class="footer-desc">A full-stack studio for startups and businesses. Design, frontend, and backend — one
+            team, one build.</p>
         </div>
-
-        <div class="proj-card">
-          <div class="proj-thumb" style="background:var(--gold); font-size:2.4rem;">🥐</div>
-          <div class="proj-body">
-            <h3>Local bakery, online ordering</h3>
-            <p style="color:var(--ink-soft); font-size:0.92rem;">A neighborhood bakery needed a way to take orders online without losing the handmade feel of the brand. We built a storefront with live menu management, so the owner can update items and sell out a product without touching code, plus scheduled pickup slots and card payments.</p>
-            <div class="proj-tags"><span class="tag">Next.js</span><span class="tag">Stripe</span><span class="tag">CMS</span></div>
-          </div>
+        <div class="footer-col">
+          <h4>Site</h4>
+          <a href="services.html">Services</a>
+          <a href="portfolio.html">Work</a>
+          <a href="about.html">About</a>
+          <a href="blog.html">Blog</a>
         </div>
-
-        <div class="proj-card">
-          <div class="proj-thumb" style="background:var(--cream-dim); font-size:2.4rem;">🚀</div>
-          <div class="proj-body">
-            <h3>SaaS startup landing page</h3>
-            <p style="color:var(--ink-soft); font-size:0.92rem;">An early-stage startup needed a marketing site that could convert visitors into waitlist sign-ups before the product was even live. We designed and built a conversion-focused landing page with an interactive product walkthrough and analytics baked in from day one.</p>
-            <div class="proj-tags"><span class="tag">React</span><span class="tag">Node</span><span class="tag">Analytics</span></div>
-          </div>
+        <div class="footer-col">
+          <h4>Get in touch</h4>
+          <a href="contact.html">Book a call</a>
+          <p>hello@codash.studio</p>
         </div>
-
-        <div class="proj-card">
-          <div class="proj-thumb" style="background:var(--maroon); color:var(--cream); font-size:2.4rem;">🍽️</div>
-          <div class="proj-body">
-            <h3>Restaurant booking platform</h3>
-            <p style="color:var(--ink-soft); font-size:0.92rem;">A restaurant was managing reservations by phone and losing track of tables during busy hours. We built a booking system with live availability, automatic waitlists, and a simple dashboard the owner actually opens every day instead of ignoring.</p>
-            <div class="proj-tags"><span class="tag">Next.js</span><span class="tag">Postgres</span><span class="tag">Dashboard</span></div>
-          </div>
+        <div class="footer-col">
+          <h4>Follow</h4>
+          <a href="https://www.instagram.com/codash.dvloppers/">Instagram</a>
+          <a href="#">LinkedIn</a>
         </div>
-
       </div>
-
-      <p style="margin-top:44px; color:var(--ink-soft); font-family:var(--font-mono); font-size:0.88rem;">More case studies coming soon as new projects launch.</p>
-    </div>
-  </section>
-
-  <!-- CTA BAND -->
-  <section class="section section--band cta-band reveal">
-    <div class="wrap">
-      <h2>Want your project on this page next?<span class="cursor cursor--gold"></span></h2>
-      <p>Tell us what you're building and we'll show you how we'd approach it.</p>
-      <div class="hero-actions">
-        <a href="contact.html" class="btn btn--primary" style="background:var(--gold); color:var(--ink); box-shadow:6px 6px 0 var(--cream);">Book a Call</a>
+      <div class="footer-bottom">
+        <span>© 2026 CODASH. All rights reserved.</span>
+        <span>Designed & built by CODASH</span>
       </div>
     </div>
-  </section>
+  </footer>
 
-</main>
-
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <a href="index.html" class="logo">CODASH<span class="cursor cursor--gold"></span></a>
-        <p class="footer-desc">A full-stack studio for startups and businesses. Design, frontend, and backend — one team, one build.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Site</h4>
-        <a href="services.html">Services</a>
-        <a href="portfolio.html">Work</a>
-        <a href="about.html">About</a>
-        <a href="blog.html">Blog</a>
-      </div>
-      <div class="footer-col">
-        <h4>Get in touch</h4>
-        <a href="contact.html">Book a call</a>
-        <p>hello@codash.studio</p>
-      </div>
-      <div class="footer-col">
-        <h4>Follow</h4>
-        <a href="https://www.instagram.com/codash.dvloppers/">Instagram</a>
-        <a href="#">LinkedIn</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 CODASH. All rights reserved.</span>
-      <span>Designed & built by CODASH</span>
-    </div>
-  </div>
-</footer>
-
-<script src="main.js"></script>
+  <script src="main.js"></script>
 </body>
+
 </html>
