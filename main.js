@@ -1,5 +1,10 @@
 // CODASH — shared interactions
 
+// Initialize Vercel Speed Insights
+(function() {
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+})();
+
 document.addEventListener("DOMContentLoaded", () => {
   // mobile nav toggle
   const toggle = document.querySelector(".nav-toggle");
