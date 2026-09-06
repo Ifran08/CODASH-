@@ -33,18 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
     revealEls.forEach((el) => el.classList.add("is-visible"));
   }
 
-  // contact form (client-side only for now — wire to email/DB backend later)
-  const form = document.querySelector("#booking-form");
-  if (form) {
-    const success = document.querySelector("#form-success");
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-      form.reset();
-      if (success) success.classList.add("show");
-    });
-  }
+  // booking-form submit handling now lives in contact.html, wired to the
+  // CODASH backend API — kept out of this shared file on purpose.
 });

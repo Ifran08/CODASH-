@@ -56,10 +56,9 @@
           <h2 style="font-size:1.5rem; margin-bottom:6px;">Tell us about your project</h2>
           <p style="color:var(--ink-soft); font-size:0.95rem; margin-bottom:28px;">The more detail, the faster we can scope it.</p>
 
-          <form id="booking-form" novalidate action="https://formspree.io/f/xwlegnlp" method="POST">
-            <input type="hidden" name="_subject" value="New project inquiry — CODASH website">
-            <input type="hidden" name="_replyto" id="replyto-field">
-            <input type="hidden" name="formatted_message" id="formatted-message-field">
+          <form id="booking-form" novalidate>
+            <!-- honeypot: real users never see or fill this in -->
+            <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
 
             <div class="form-grid-2">
               <div class="form-row">
@@ -195,6 +194,9 @@
 
 <script src="main.js"></script>
 <script>
+// Point this at your deployed Render/Railway URL once the backend is live.
+const CODASH_API_BASE = 'https://codash-backend-e1dv.onrender.com';
+
 document.getElementById('booking-form').addEventListener('submit', function (e) {
   e.preventDefault();
   const form = e.target;
@@ -202,65 +204,24 @@ document.getElementById('booking-form').addEventListener('submit', function (e) 
   const submitBtn = form.querySelector('button[type="submit"]');
   const originalBtnText = submitBtn.textContent;
 
-  const name = form.name.value.trim();
-  const email = form.email.value.trim();
-  const company = form.company.value.trim() || 'Not provided';
-  const projectTypeLabels = {
-    'new-site': 'A new website',
-    'redesign': 'Redesign of an existing site',
-    'webapp': 'Web app / backend build',
-    'not-sure': 'Not sure yet'
-  };
-  const budgetLabels = {
-    'under-3k': 'Under $3,000',
-    '3-8k': '$3,000 – $8,000',
-    '8-15k': '$8,000 – $15,000',
-    '15k-plus': '$15,000+',
-    'not-sure': 'Not sure yet'
-  };
-  const projectType = projectTypeLabels[form['project-type'].value] || 'Not specified';
-  const budget = budgetLabels[form.budget.value] || 'Not specified';
-  const message = form.message.value.trim();
-
-  const formattedMessage =
-`Dear CODASH team,
-
-You have received a new project inquiry through the website contact form. Details are below:
-
-Client name: ${name}
-Client email: ${email}
-Business / project name: ${company}
-Project type requested: ${projectType}
-Estimated budget: ${budget}
-
-Project details, in the client's own words:
-"${message}"
-
-Please follow up within one business day, as promised on the site.
-
-Best regards,
-CODASH Website`;
-
-  document.getElementById('replyto-field').value = email;
-  document.getElementById('formatted-message-field').value = formattedMessage;
-
-  const data = new FormData(form);
+  const payload = Object.fromEntries(new FormData(form).entries());
 
   submitBtn.disabled = true;
   submitBtn.textContent = 'Sending...';
 
-  fetch(form.action, {
+  fetch(`${CODASH_API_BASE}/api/booking`, {
     method: 'POST',
-    body: data,
-    headers: { 'Accept': 'application/json' }
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
   })
-    .then((response) => {
-      if (response.ok) {
+    .then((response) => response.json().then((result) => ({ ok: response.ok, result })))
+    .then(({ ok, result }) => {
+      if (ok && result.success) {
         form.reset();
         successMsg.style.display = 'block';
         successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       } else {
-        alert('Something went wrong — please try again or email us directly at hello@codash.studio.');
+        alert(result.errors?.[0] || 'Something went wrong — please try again or email us directly at hello@codash.studio.');
       }
     })
     .catch(() => {
