@@ -19,7 +19,7 @@
     <ul class="nav-links" id="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html">Services</a></li>
-      <li><a href="portfolio.html">Work</a></li>
+      <li><a href="work.html">Work</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="contact.html" aria-current="page">Contact</a></li>
@@ -57,6 +57,9 @@
           <p style="color:var(--ink-soft); font-size:0.95rem; margin-bottom:28px;">The more detail, the faster we can scope it.</p>
 
           <form id="booking-form" novalidate>
+            <!-- honeypot: real users never see or fill this in -->
+            <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+
             <div class="form-grid-2">
               <div class="form-row">
                 <label for="name">Full name</label>
@@ -107,7 +110,6 @@
             <div class="form-success" id="form-success">
               ✓ Thanks — your message is in. We'll reply within one business day.
             </div>
-            <p class="form-note">This form isn't wired to email yet — hook it up to your backend or a form service (e.g. Formspree) before going live.</p>
           </form>
         </div>
 
@@ -148,7 +150,7 @@
           <div style="margin-top:36px; background:var(--gold-soft); border:var(--border); border-radius:var(--radius-md); padding:24px; box-shadow:var(--shadow-pop-sm);">
             <h4 style="font-family:var(--font-display); font-size:1.05rem; margin-bottom:8px;">Not ready to talk yet?</h4>
             <p style="color:var(--ink-soft); font-size:0.92rem;">Have a look through our work first — no pressure, no forms.</p>
-            <a href="portfolio.html" class="btn btn--ghost btn--sm" style="margin-top:16px;">See our work →</a>
+            <a href="work.html" class="btn btn--ghost btn--sm" style="margin-top:16px;">See our work →</a>
           </div>
         </div>
 
@@ -163,12 +165,12 @@
     <div class="footer-grid">
       <div>
         <a href="index.html" class="logo">CODASH<span class="cursor cursor--gold"></span></a>
-        <p class="footer-desc">A full-stack studio for startups and small businesses. Design, frontend, and backend — one team, one build.</p>
+        <p class="footer-desc">A full-stack studio for startups and businesses. Design, frontend, and backend — one team, one build.</p>
       </div>
       <div class="footer-col">
         <h4>Site</h4>
         <a href="services.html">Services</a>
-        <a href="portfolio.html">Work</a>
+        <a href="work.html">Work</a>
         <a href="about.html">About</a>
         <a href="blog.html">Blog</a>
       </div>
@@ -179,7 +181,7 @@
       </div>
       <div class="footer-col">
         <h4>Follow</h4>
-        <a href="#">Instagram</a>
+        <a href="https://www.instagram.com/codash.dvloppers/">Instagram</a>
         <a href="#">LinkedIn</a>
       </div>
     </div>
@@ -191,5 +193,45 @@
 </footer>
 
 <script src="main.js"></script>
+<script>
+// Point this at your deployed Render/Railway URL once the backend is live.
+const CODASH_API_BASE = 'https://codash-backend-e1dv.onrender.com';
+
+document.getElementById('booking-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const form = e.target;
+  const successMsg = document.getElementById('form-success');
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const originalBtnText = submitBtn.textContent;
+
+  const payload = Object.fromEntries(new FormData(form).entries());
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending...';
+
+  fetch(`${CODASH_API_BASE}/api/booking`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+    .then((response) => response.json().then((result) => ({ ok: response.ok, result })))
+    .then(({ ok, result }) => {
+      if (ok && result.success) {
+        form.reset();
+        successMsg.style.display = 'block';
+        successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } else {
+        alert(result.errors?.[0] || 'Something went wrong — please try again or email us directly at hello@codash.studio.');
+      }
+    })
+    .catch(() => {
+      alert('Something went wrong — please try again or email us directly at hello@codash.studio.');
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalBtnText;
+    });
+});
+</script>
 </body>
 </html>
