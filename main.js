@@ -1,21 +1,35 @@
 // CODASH — shared interactions
 
+// Set the browser-tab favicon on every page.
+if (!document.querySelector('link[rel~="icon"]')) {
+  const favicon = document.createElement("link");
+  favicon.rel = "icon";
+  favicon.type = "image/x-icon";
+  favicon.href = "favicon_io/favicon.ico";
+  document.head.appendChild(favicon);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-  // mobile nav toggle
+  // Mobile nav toggle
   const toggle = document.querySelector(".nav-toggle");
   const links = document.querySelector(".nav-links");
+
   if (toggle && links) {
     toggle.addEventListener("click", () => {
       const isOpen = links.classList.toggle("open");
       toggle.setAttribute("aria-expanded", String(isOpen));
     });
-    links.querySelectorAll("a").forEach((a) =>
-      a.addEventListener("click", () => links.classList.remove("open"))
-    );
+
+    links.querySelectorAll("a").forEach((a) => {
+      a.addEventListener("click", () => {
+        links.classList.remove("open");
+      });
+    });
   }
 
-  // scroll reveal
+  // Scroll reveal
   const revealEls = document.querySelectorAll(".reveal");
+
   if ("IntersectionObserver" in window && revealEls.length) {
     const io = new IntersectionObserver(
       (entries) => {
@@ -28,11 +42,14 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { threshold: 0.15 }
     );
+
     revealEls.forEach((el) => io.observe(el));
   } else {
-    revealEls.forEach((el) => el.classList.add("is-visible"));
+    revealEls.forEach((el) => {
+      el.classList.add("is-visible");
+    });
   }
 
-  // booking-form submit handling now lives in contact.html, wired to the
-  // CODASH backend API — kept out of this shared file on purpose.
+  // Booking-form submit handling lives in contact.html
+  // and is wired to the CODASH backend API.
 });
