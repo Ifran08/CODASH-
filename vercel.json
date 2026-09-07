@@ -23,6 +23,34 @@
     {
       "source": "/contact",
       "destination": "/contact.html"
+    },
+    {
+      "source": "/blog-after-launch",
+      "destination": "/blog-after-launch.html"
+    },
+    {
+      "source": "/blog-backend-explained",
+      "destination": "/blog-backend-explained.html"
+    },
+    {
+      "source": "/blog-design-handoff",
+      "destination": "/blog-design-handoff.html"
+    },
+    {
+      "source": "/blog-load-time",
+      "destination": "/blog-load-time.html"
+    },
+    {
+      "source": "/blog-nextjs-vs-react",
+      "destination": "/blog-nextjs-vs-react.html"
+    },
+    {
+      "source": "/blog-scoping-framework",
+      "destination": "/blog-scoping-framework.html"
+    },
+    {
+      "source": "/blog-template-vs-custom",
+      "destination": "/blog-template-vs-custom.html"
     }
   ]
 }
