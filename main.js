@@ -5,12 +5,12 @@ if (!document.querySelector('link[rel~="icon"]')) {
   const favicon = document.createElement("link");
   favicon.rel = "icon";
   favicon.type = "image/x-icon";
-  favicon.href = "favicon.ico";
+  favicon.href = "favicon_io/favicon.ico";
   document.head.appendChild(favicon);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // mobile nav toggle
+  // Mobile nav toggle
   const toggle = document.querySelector(".nav-toggle");
   const links = document.querySelector(".nav-links");
 
@@ -20,12 +20,14 @@ document.addEventListener("DOMContentLoaded", () => {
       toggle.setAttribute("aria-expanded", String(isOpen));
     });
 
-    links.querySelectorAll("a").forEach((a) =>
-      a.addEventListener("click", () => links.classList.remove("open"))
-    );
+    links.querySelectorAll("a").forEach((a) => {
+      a.addEventListener("click", () => {
+        links.classList.remove("open");
+      });
+    });
   }
 
-  // scroll reveal
+  // Scroll reveal
   const revealEls = document.querySelectorAll(".reveal");
 
   if ("IntersectionObserver" in window && revealEls.length) {
@@ -43,9 +45,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     revealEls.forEach((el) => io.observe(el));
   } else {
-    revealEls.forEach((el) => el.classList.add("is-visible"));
+    revealEls.forEach((el) => {
+      el.classList.add("is-visible");
+    });
   }
 
-  // booking-form submit handling now lives in contact.html,
-  // wired to the CODASH backend API.
+  // Booking-form submit handling lives in contact.html
+  // and is wired to the CODASH backend API.
 });
