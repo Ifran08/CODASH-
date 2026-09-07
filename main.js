@@ -4,8 +4,8 @@
 if (!document.querySelector('link[rel~="icon"]')) {
   const favicon = document.createElement("link");
   favicon.rel = "icon";
-  favicon.type = "image/png";
-  favicon.href = "codash-favicon.png";
+  favicon.type = "image/x-icon";
+  favicon.href = "favicon.ico";
   document.head.appendChild(favicon);
 }
 
